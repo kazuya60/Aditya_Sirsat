@@ -1,0 +1,573 @@
+/* Root Variables */
+:root {
+    --primary-color: #3B82F6;
+    --bg-color: black;
+    --text-color: #e0e0e0;
+    --scan-color: rgba(255, 0, 0, 0.312);
+}
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: repeating-linear-gradient(
+        transparent 0,
+        transparent 50px,
+        var(--scan-color) 50px,
+        var(--scan-color) 51px
+    );
+    
+    animation: scan 10s linear infinite;
+}
+
+/* Background Layer 2 (Second Layer with Delay) */
+.background-animation2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: repeating-linear-gradient(
+        transparent 0,
+        transparent 50px,
+        var(--scan-color) 50px,
+        var(--scan-color) 51px
+    );
+    animation: scan 10s linear infinite;
+    animation-delay: -5s;  /* Start 5 seconds behind the first layer */
+}
+
+.background-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: radial-gradient(circle at 50% 50%, rgba(246, 7, 7, 0.05), transparent 70%);
+    pointer-events: none;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header Styles */
+header {
+    border-bottom: 1px solid var(--primary-color);
+    padding: 0.7rem;
+    margin-bottom: 2rem;
+
+    /* Sticky positioning */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: var(--bg-color); /* Match the background to avoid visual glitches */
+}
+
+
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.logo {
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.nav-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.profile-video {
+    width: 100%;
+    max-width: 600px; /* Adjust based on your layout */
+    border: 2px solid #3B82F6;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.profile-video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.video-container {
+    position: relative;
+    display: inline-block; /* Ensures the container wraps around the video */
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* .human-detected {
+    opacity: 1; /* Fully visible when the hidden class is removed */
+    /* visibility: visible; */
+/* } */
+
+
+.robot-detected {
+    opacity: 1; /* Fully visible when the hidden class is removed */
+    visibility: visible;
+    position: absolute;
+    bottom: -1.5rem; /* Position slightly outside the video */
+    right: -1.5rem; /* Adjust distance from the edges */
+    background: black;
+    padding: 0.5rem 1rem;
+    border: 2px solid #EF4444;
+    color: #EF4444;
+    animation: blink 2s infinite; /* Blinking effect */
+    z-index: 10;
+    white-space: nowrap;
+    font-size: 0.9rem; /* Adjust text size as needed */
+    /* border-radius: 4px; Optional: Adds rounded corners */
+}
+
+
+
+/* Main Content Grid */
+.main-content {
+    padding: 2rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start; /* Align items to the top */
+    }
+    .header-content {
+        position: relative;
+    }
+    
+
+    .left-column, .right-column {
+        max-width: 500px; /* Limit maximum width */
+        justify-self: center; /* Center the columns */
+    }
+
+    .profile-box, .message-box {
+        width: 100%; /* Full width of column */
+        max-width: 500px; /* Maximum width */
+        justify-content: center;
+    }
+
+    .image-container {
+        max-width: 500px; /* Limit image container width */
+        margin: 0 auto; /* Center the image */
+    }
+
+    .profile-image {
+        object-fit: contain; /* Maintain aspect ratio */
+        width: 100%; /* Full width of container */
+        height: auto; /* Preserve aspect ratio */
+    }
+}
+@media (max-width:768px) {
+
+    .logo{
+        display: none;
+    }
+
+    .header-content {
+        position: relative;
+        justify-content: center;
+    }
+    
+}
+
+/* Profile and Message Boxes */
+.profile-box, .message-box {
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    background: rgb(0, 0, 0);
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.message-box {
+    border-color: #EF4444;
+}
+
+.profile-box:hover, .message-box:hover {
+    transform: translateY(-2px);
+}
+
+.profile-box::before, .message-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.profile-box:hover::before, .message-box:hover::before {
+    opacity: 0.1;
+}
+
+/* Typography */
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.blinking-cursor {
+    position: relative;
+    display: inline-block;
+}
+
+.blinking-cursor::after {
+    content: '_';
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position immediately after the text */
+    margin-left: 2px; /* Optional: Add a small space between text and cursor */
+    color: #EF4444;
+    font-weight: bold;
+    animation: blink2 2s steps(2, start) infinite;
+}
+
+.status {
+    color: #93C5FD;
+}
+
+.system-message {
+    color: #EF4444;
+    margin-bottom: 1rem;
+}
+
+/* Download Button */
+.download-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.download-btn:hover {
+    background: var(--primary-color);
+    color: black;
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Image Section */
+.right-column {
+    position: relative;
+    padding: 0 2rem 2rem 0;
+}
+
+.image-container {
+    position: relative;
+    border: 2px solid #3B82F6;
+    overflow: visible;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    display: block;
+    max-width: 100%;
+}
+
+.profile-image:hover {
+    filter: grayscale(0%);
+}
+
+.human-detected {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: black;
+    padding: 0.5rem 1rem;
+    border: 2px solid #EF4444;
+    color: #EF4444;
+    animation: blink 2s infinite;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Social Links Section */
+.social-section {
+    margin-top: 4rem;
+    border: 2px solid #3B82F6;
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 2px #3B82F6);
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px #EF4444);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+
+    
+}
+
+@keyframes blink2 {
+    0%{
+        
+        visibility: visible;
+    }
+    100%{
+        visibility: hidden;
+    }
+}
+
+/* Robot Section */
+/* Centering About Me Content */
+.robot-section {
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    width: 100%;
+    height: 100vh; /* Ensures full viewport height */
+    position: relative;
+    background: url('./img/Screenshot\ \(276\).png') no-repeat center center;
+    background-size: cover;
+    box-shadow: inset 0 0 50px 50px rgb(0, 0, 0); /* Create a fading border effect */
+    padding: 2rem; /* Add padding for responsiveness */
+}
+
+.about-me-container {
+    max-width: 800px; /* Restrict the width of the content */
+    text-align: center; /* Centers the text inside the container */
+    color: var(--text-color); /* Ensures readability */
+    z-index: 1; /* Keeps the content above any background elements */
+}
+.about-me-container p{
+    margin-bottom: 2rem;
+}
+
+/* Optional: Overlay for Better Contrast */
+.robot-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.784); /* Semi-transparent overlay */
+    z-index: 0; /* Places the overlay below the content */
+    pointer-events: none; /* Prevents interaction with the overlay */
+}
+
+/* Highlighted text */
+.highlight {
+    color: #EF4444; /* Use your primary color or any custom color */
+    font-weight:bolder; /* Optional: Make the text bold */
+    font-size:larger;
+}
+
+
+
+        
+    
+
+
+
+
+
+
