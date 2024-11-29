@@ -615,6 +615,50 @@ footer {
     margin: 0;
 }
 
+
+.project-description {
+    color: #94A3B8;
+    margin-bottom: 1rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tag {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--secondary-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+
 /* Responsive for Portrait GIFs */
 @media (max-aspect-ratio: 3/4) {
     .game-thumbnail {
