@@ -186,12 +186,6 @@ header {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* .human-detected {
-    opacity: 1; /* Fully visible when the hidden class is removed */
-    /* visibility: visible; */
-/* } */
-
-
 .robot-detected {
     opacity: 1; /* Fully visible when the hidden class is removed */
     visibility: visible;
@@ -724,6 +718,8 @@ a {
 
 .send-btn {
     background: transparent;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
     padding: 0.75rem;
@@ -736,6 +732,82 @@ a {
     color: black;
     box-shadow: 0 0 15px var(--primary-color);
 }
+
+textarea {
+    resize: none; /* Disable resizing */
+}
+
+ /* Inline Style Adjustments for Devil Survivor Theme */
+ .thank-you-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: var(--text-color);
+    background: url(./img/wp5083848-survivor-wallpapers.jpg) no-repeat center center;
+    background-size: cover;
+    box-shadow: inset 0 0 80px 20px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.thank-you-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Overlay for better contrast */
+    z-index: 0;
+}
+
+.thank-you-content {
+    position: relative;
+    z-index: 1; /* Ensures it's above the overlay */
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+.thank-you-title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    animation: glowPulse 2s infinite; /* Pulsing effect */
+    margin-bottom: 1rem;
+}
+
+.thank-you-message {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.thank-you-message span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.return-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.return-btn:hover {
+    color: var(--bg-color);
+    background: var(--secondary-color);
+    box-shadow: 0 0 15px var(--secondary-color);
+}
+
 
 
 

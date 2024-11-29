@@ -13,18 +13,21 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
     // Validate email
     if (!emailRegex.test(emailInput.value)) {
-        event.preventDefault(); // Prevent form submission
+        // event.preventDefault(); // Prevent form submission
         alert("Please enter a valid email address (e.g., user@example.com)");
         emailInput.focus();
         return; // Exit early if validation fails
     }
 
     // If email is valid, show a success message and handle submission
-    event.preventDefault(); // Prevent default submission for now
+    // event.preventDefault(); // Prevent default submission for now
     alert('TRANSMISSION_SENT: Message received by system');
     
     // Call other logic here, e.g., showMessage();
     showMessage();
+
+    // Redirect to thankyou.html
+    window.location.href = "thankyou.html";
 
     // You can replace this with actual submission logic, like sending data to a server
     // Example: sendFormData();
