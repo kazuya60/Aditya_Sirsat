@@ -656,6 +656,19 @@ a {
     text-decoration: none;
 }
 
+.portfolio-title-container {
+    font-size: larger;
+    max-width: 800px; /* Restrict the width of the content */
+    text-align: center; /* Center-align the text */
+    color: var(--text-color); /* Set the text color */
+    margin: 0 auto; /* Center the container itself */
+    padding: 1rem; /* Add spacing around the content */
+    
+}
+.portfolio-title-container h1{
+    font-size: 3rem;
+}
+
 
 
 
