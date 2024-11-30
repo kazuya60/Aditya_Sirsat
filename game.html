@@ -22,8 +22,8 @@
           <nav class="main-nav">
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">HOME</a></li>
-                <li><a href="about.html" class="nav-link">ABOUT</a></li>
-                <li><a href="portfolio.html" class="nav-link active">PORTFOLIO</a></li>
+                <li><a href="about.html" class="nav-link active">ABOUT</a></li>
+                <li><a href="portfolio.html" class="nav-link">PORTFOLIO</a></li>
                 <li><a href="resume.html" class="nav-link">RESUME</a></li>
                 <li><a href="contact.html" class="nav-link">CONTACT</a></li>
             </ul>
@@ -33,100 +33,44 @@
 
     <main class="container main-content">
 
-        <div class="portfolio-title-container">
-            <h1 class="title">My Portfolio</h1>
-            <p class="portfolio-subtitle">Explore a showcase of my game development projects. Each project is a journey of creativity, challenges, and innovation.</p>
-        
-        </div>
-        
+        <section class="game-details">
+            <h1 id="game-title">Game Title</h1>
+            <p id="short-description">Short description about the game.</p>
             
-        
-        <section class="portfolio-section">
+            <div class="game-meta">
+                <p><strong>Platforms:</strong> <span id="platforms">PC, Mobile</span></p>
+                <p><strong>Engine:</strong> <span id="engine">Unity</span></p>
+                <p><strong>Role:</strong> <span id="role">Game Developer</span></p>
+                <p><strong>Responsibilities:</strong> <span id="responsibilities">Coding, Art</span></p>
+            </div>
             
-            <h1 class="title">MY GAMES</h1>
-            <div class="game-grid">
-                <!-- Example Game Card -->
-                <div class="game-card">
-                    <a href="game.html">
-                        <img src="img/dancing-random.gif" alt="Game 1" class="game-thumbnail">
-                        <div class="game-info">
-                            <h3>Game Title 1</h3>
-                            <p>Short description of the game.</p>
-                        </div>
-                    </a>
-                </div>
+            <div class="media">
+                <img id="main-gif" src="img/deer-anime.gif" alt="Game preview" class="game-thumbnail">
+                <iframe id="youtube-video" src="https://youtu.be/aLLbO-9w3hM?si=emFGO2PdUur9ciJj" frameborder="0" allowfullscreen class="profile-video"></iframe>
+            </div>
 
-                <div class="game-card">
-                    <a href="game8.html">
-                    <img src="img/deer-anime.gif" alt="Project 1 Preview" class="game-thumbnail">
-                    <div class="game-info">
-                        <h3>Project Name</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">Unity</span>
-                            <span class="project-tag">C#</span>
-                            <span class="project-tag">Game Genre</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Itchi.io</a>
-                        </div>
-                    </div>
-                </a>
+            <div class="screenshots">
+                <h2>Screenshots</h2>
+                <div id="screenshots-container" class="image-container">
+                    <img src="img/Screenshot (276).png" alt="">
+                    <img src="img/Screenshot (276).png" alt="">
+                    <img src="img/Screenshot (276).png" alt="">
+                    <img src="img/Screenshot (276).png" alt="">
+                    <img src="img/Screenshot (276).png" alt="">
+                    <img src="img/Screenshot (276).png" alt="">
+                    <!-- Screenshots will be inserted here dynamically -->
                 </div>
-
-                <div class="game-card">
-                    <a href="game8.html">
-                    <img src="img/deer-anime.gif" alt="Project 1 Preview" class="game-thumbnail">
-                    <div class="game-info">
-                        <h3>Project Name</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">Unity</span>
-                            <span class="project-tag">C#</span>
-                            <span class="project-tag">Game Genre</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Itchi.io</a>
-                        </div>
-                    </div>
-                </a>
-                </div>
-
-                <div class="game-card">
-                    <a href="game8.html">
-                    <img src="img/deer-anime.gif" alt="Project 1 Preview" class="game-thumbnail">
-                    <div class="game-info">
-                        <h3>Project Name</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">Unity</span>
-                            <span class="project-tag">C#</span>
-                            <span class="project-tag">Game Genre</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Itchi.io</a>
-                        </div>
-                    </div>
-                </a>
-                </div>
-
-                <div class="game-card">
-                    <a href="game8.html">
-                    <img src="img/deer-anime.gif" alt="Project 1 Preview" class="game-thumbnail">
-                    <div class="game-info">
-                        <h3>Project Name</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">Unity</span>
-                            <span class="project-tag">C#</span>
-                            <span class="project-tag">Game Genre</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Itchi.io</a>
-                        </div>
-                    </div>
-                </a>
-                </div>
-                <!-- Add more game cards as needed -->
-
-                
+            </div>
+            
+            <div class="links">
+                <a id="itch-link" href="https://placeholder.itch.io" target="_blank" class="download-btn">Play on Itch.io</a>
+            </div>
         </section>
+        
+        <div class="navigation">
+            <button id="prev-project" class="send-btn">Previous Project</button>
+            <button id="next-project" class="send-btn">Next Project</button>
+        </div>
 
         <div class="social-section">
           <h2 class="title">ESTABLISH_CONNECTION:</h2>
