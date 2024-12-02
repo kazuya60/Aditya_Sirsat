@@ -200,7 +200,6 @@ header {
     z-index: 10;
     white-space: nowrap;
     font-size: 0.9rem; /* Adjust text size as needed */
-    /* border-radius: 4px; Optional: Adds rounded corners */
 }
 
 
@@ -605,7 +604,7 @@ footer {
 .game-info h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .game-info p {
@@ -1018,6 +1017,41 @@ textarea {
 .lightbox-btn.next {
     right: 20px;
 }
+
+.demon-terminal {
+    background: rgba(0,0,0,0.9);
+    border: 3px solid var(--primary-color);
+    padding: 30px;
+    /* width: 90%; */
+    /* max-width: 700px; */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px var(--primary-color);
+    
+}
+
+
+
+.choice-line {
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* New line added */
+.system-warning {
+    /* font-size: 12px; */
+    margin-top: 1rem;
+    color: var(--primary-color);
+    animation: pulse 1.5s infinite;
+    font-weight:800;
+    margin-bottom: 1rem;
+}
+
+
+
+
 
 
 
