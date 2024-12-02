@@ -559,7 +559,8 @@ footer {
 /* Portfolio Section */
 .portfolio-section {
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 2rem;
+    padding-bottom: 5rem;
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid var(--primary-color);
     border-radius: 10px;
@@ -578,6 +579,7 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .game-card:hover {
@@ -621,6 +623,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    padding-bottom: 2rem;
 }
 
 .project-tag {
@@ -629,12 +632,17 @@ footer {
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.75rem;
+    
 }
 
 .project-links {
+    position: absolute;
+    bottom: 1rem;             /* Distance from the bottom */
+    right: 1rem;              /* Distance from the right */
     display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
+    justify-content:flex-end;
+    margin-top: 2rem;
+    
 }
 
 .project-link {

@@ -59,6 +59,8 @@ function initializeGameGrid() {
         },
 
         
+
+        
     ];
 
     const gameGrid = document.querySelector(".game-grid");
