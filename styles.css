@@ -1037,6 +1037,23 @@ textarea {
     color: var(--secondary-color);
     margin-bottom: 20px;
     font-weight: bold;
+    opacity: 0.3;
+}
+.choice-line1{
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+    opacity: 0.5;
+    
+}
+
+.choice-line2{
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+    opacity: 1;
 }
 
 /* New line added */
