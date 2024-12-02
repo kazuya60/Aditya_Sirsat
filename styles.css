@@ -820,20 +820,25 @@ textarea {
     margin: 20px auto;
     max-width: 65rem;
 }
+.short-description{
+    text-align: center;
+}
 
 .game-details h1 {
     font-size: 2.5rem;
-    font-family: 'Oswald', sans-serif;
+    /* font-family: 'Oswald', sans-serif; */
     color: var(--secondary-color);
     text-transform: uppercase;
     margin-bottom: 10px;
     text-align: center;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 .game-details p {
     font-size: 1.2rem;
     line-height: 1.8;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     color: #ccc;
 }
 
@@ -843,7 +848,7 @@ textarea {
 
 .game-meta p {
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     margin: 5px 0;
 }
 
@@ -904,7 +909,7 @@ textarea {
 }
 
 .screenshots h2 {
-    font-family: 'Oswald', sans-serif;
+    /* font-family: 'Oswald', sans-serif; */
     color: #3B82F6;
     text-transform: uppercase;
     margin-bottom: 10px;
