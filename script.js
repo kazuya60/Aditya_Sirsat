@@ -1,5 +1,19 @@
 console.log("Script is running");
 
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const nav = document.querySelector(".main-nav");
+    const body =document.body;
+
+    hamburger.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("active");
+        hamburger.classList.toggle("active");
+        body.classList.toggle("nav-open", isOpen);
+
+    });
+});
+
+
 // ==========================
 // Utility: Parse URL Parameters
 // ==========================

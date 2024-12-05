@@ -7,12 +7,13 @@
     --scan-color: rgba(255, 0, 0, 0.483);
 }
 
-/* Reset Styles */
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
 
 /* Base Styles */
 body {
@@ -24,6 +25,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+
 
 /* Background Animation */
 .background-animation {
@@ -77,6 +79,17 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+/* Main Content Grid */
+.main-content {
+    padding: 2rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
 /* Header Styles */
@@ -204,18 +217,12 @@ header {
 
 
 
-/* Main Content Grid */
-.main-content {
-    padding: 2rem 0;
-}
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
 
-@media (min-width: 768px) {
+
+
+/* For tablets or desktops */
+@media only screen and (min-width: 768px) {
     
     .grid {
         grid-template-columns: 1fr 1fr;
@@ -225,7 +232,6 @@ header {
         position: relative;
     }
     
-
     .left-column, .right-column {
         max-width: 500px; /* Limit maximum width */
         justify-self: center; /* Center the columns */
@@ -248,18 +254,92 @@ header {
         height: auto; /* Preserve aspect ratio */
     }
 }
-@media (max-width:768px) {
 
-    .logo{
-        display: none;
-    }
+/* For mobile dammit */
+/* Mobile-specific styles */
+@media (max-width: 768px) {
 
-    .header-content {
-        position: relative;
-        justify-content: center;
-    }
-    
+
+    /* Prevent scrolling on the body when the menu is active */
+body.nav-open {
+    overflow: hidden;
+    height: 100%; /* Prevent content from being scrollable */
 }
+
+.main-nav {
+        display: none; /* Hide default nav */
+        flex-direction: column; /* Fullscreen menu layout */
+        justify-content: center;
+        align-items: center;
+        position: fixed; /* Cover entire screen */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        z-index: 1100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 10s ease-in-out;
+        
+    }
+
+    .main-nav.active {
+        display: flex;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 2rem; /* Larger spacing between links */
+    }
+
+    .nav-link {
+        display: block;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1rem;
+        
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon only on small screens */
+        position: fixed;
+        top: 2rem; /* Adjust the distance from the top */
+    right: 2rem; /* Adjust the distance from the right */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 25px;
+        height: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1200; /* Above fullscreen menu */
+    }
+
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-color);
+        transition: all 0.3s ease;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
 
 /* Profile and Message Boxes */
 .profile-box, .message-box {
@@ -318,9 +398,7 @@ header {
     animation: blink2 2s steps(2, start) infinite;
 }
 
-.status {
-    color: #93C5FD;
-}
+
 
 .system-message {
     color: #EF4444;
@@ -1035,16 +1113,17 @@ textarea {
 .choice-line {
     text-transform: uppercase;
     color: var(--secondary-color);
+    margin-top: 40px;
     margin-bottom: 20px;
     font-weight: bold;
-    opacity: 0.3;
 }
 .choice-line1{
     text-transform: uppercase;
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 70px;
     font-weight: bold;
-    opacity: 0.5;
+    font-size: larger;
     
 }
 
@@ -1058,7 +1137,6 @@ textarea {
 
 /* New line added */
 .system-warning {
-    /* font-size: 12px; */
     margin-top: 1rem;
     color: var(--primary-color);
     animation: pulse 1.5s infinite;

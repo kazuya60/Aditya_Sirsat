@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Root Variables for Easy Customization */
+        :root {
+            --primary-color: #3B82F6;
+            --secondary-color: #EF4444;
+            --bg-color: black;
+            --text-color: #e0e0e0;
+            --font-size-base: 10pt;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+                padding: 10mm;
+                box-shadow: none;
+                border: none;
+            }
+            .edit-btn, 
+            #colorCustomizer,
+            #colorCustomizer * {
+                display: none !important;
+                visibility: hidden;
+            }
+            [contenteditable="true"] {
+                border: none !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        } */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.4;
+            font-size: var(--font-size-base);
+        }
+
+        .container {
+            /* height: 100vh; */
+            width: 100%;
+            max-width: 210mm;
+            margin: 20px auto;
+            background-color: rgba(59, 130, 246, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+            border: 1px solid var(--primary-color);
+            position: relative;
+        }
+
+        .edit-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 16pt;
+        }
+
+        .header p {
+            font-size: 10pt;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 9pt;
+        }
+
+        .section {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgba(59, 130, 246, 0.05);
+            border-radius: 5px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 11pt;
+        }
+
+        .experience-item {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        ul {
+            margin-left: 20px;
+            font-size: 9pt;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 5px;
+        }
+
+        .skill-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            text-align: center;
+            font-size: 8pt;
+            transition: background-color 0.3s ease;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 10pt;
+        }
+
+        .links a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        [contenteditable="true"] {
+            border-bottom: 1px dashed var(--primary-color);
+            min-height: 1em;
+        }
+
+        [contenteditable="true"]:focus {
+            outline: none;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        #colorCustomizer {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 100;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="edit-btn" id="toggleEdit">Edit Resume</button>
+
+        <div class="header">
+            <h1 contenteditable="false">Aditya Vijay Sirsat</h1>
+            <p contenteditable="false">Game Programmer & Level Designer</p>
+        </div>
+
+        <div class="contact-info">
+            <div contenteditable="false"><i class="fas fa-envelope"></i> eternalsirsat@gmail.com</div>
+            <div contenteditable="false"><i class="fas fa-phone"></i> +91 9619468799</div>
+            <div contenteditable="false"><i class="fas fa-map-marker-alt"></i> Kalyan East, Maharashtra, India</div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">About Me</h2>
+            <p contenteditable="false">Passionate about video games both as a player and a creator, I've honed my skills for 2 years as a Game Programmer and Level Designer with a primary focus on coding.<br> Well-versed in Unity C# and skilled in Visual Scripting using UE4 Blueprints. </br></p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="experience-item">
+                <div class="job-title">Amity University Mumbai</div>
+                <div>B.A (Multimedia & Gaming), 2021-2024</div>
+                <div>CGPA: 9.20</div>
+            </div>
+            <div class="experience-item">
+                <div class="job-title">South Eastern Finland School of Applied Science (XAMK)</div>
+                <div>Online Program, 2022-2023</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Certificates</h2>
+
+            <div class="experience-item">
+                <div class="job-title">Ubisoft Game development
+                    Workshop</div>
+                <div>2023</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="experience-item">
+                <div class="job-title">Cataclysm</div>
+                <div>Arcade Racing Game (Unity)</div>
+                <ul>
+                    <li>Designed obstacles and ramps</li>
+                    <li>Implemented game logic in Unity C#</li>
+                    <li>Created in-game UI and logo</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="job-title">Boom Crates</div>
+                <div>Slice and Destroy Game (Unity)</div>
+                <ul>
+                    <li>Implemented object spawning</li>
+                    <li>Added score and lives functionality</li>
+                    <li>Built for Android and PC</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Unity Engine</div>
+                <div class="skill-tag">Unreal Engine</div>
+                <div class="skill-tag">C#</div>
+                <div class="skill-tag">Blender</div>
+                <div class="skill-tag">Git</div>
+                <div class="skill-tag">Visual Scripting</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">English (Proficient)</div>
+                <div class="skill-tag">Marathi (Native)</div>
+                <div class="skill-tag">Hindi (Proficient)</div>
+                <div class="skill-tag">French (Conversational)</div>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/kazuya60" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/aditya-sirsat-7b4653258/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://kazuya-minegishi.itch.io/" target="_blank"><i class="fab fa-itch-io"></i> Itch.io</a>
+        </div>
+    </div>
+
+    <div id="colorCustomizer">
+        <label>Primary Color: <input type="color" id="primaryColorPicker" value="#3B82F6"></label><br>
+        <label>Secondary Color: <input type="color" id="secondaryColorPicker" value="#EF4444"></label><br>
+        <label>Background Color: <input type="color" id="bgColorPicker" value="#000000"></label><br>
+        <label>Text Color: <input type="color" id="textColorPicker" value="#e0e0e0"></label>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const editBtn = document.getElementById('toggleEdit');
+            const colorCustomizer = document.getElementById('colorCustomizer');
+            let isEditMode = false;
+
+            editBtn.addEventListener('click', () => {
+                isEditMode = !isEditMode;
+                
+                // Toggle contenteditable for all sections
+                const editableElements = document.querySelectorAll('h1, p, .job-title, .contact-info div, .experience-item div, .experience-item ul li');
+                
+                editableElements.forEach(el => {
+                    el.contentEditable = isEditMode;
+                });
+
+                // Update button text
+                editBtn.textContent = isEditMode ? 'Save Changes' : 'Edit Resume';
+
+                // Optional: Add local storage save functionality
+                if (!isEditMode) {
+                    localStorage.setItem('resumeContent', document.querySelector('.container').innerHTML);
+                }
+            });
+
+            // Color customization
+            const primaryPicker = document.getElementById('primaryColorPicker');
+            const secondaryPicker = document.getElementById('secondaryColorPicker');
+            const bgPicker = document.getElementById('bgColorPicker');
+            const textPicker = document.getElementById('textColorPicker');
+
+            [primaryPicker, secondaryPicker, bgPicker, textPicker].forEach(picker => {
+                picker.addEventListener('input', () => {
+                    document.documentElement.style.setProperty('--primary-color', primaryPicker.value);
+                    document.documentElement.style.setProperty('--secondary-color', secondaryPicker.value);
+                    document.documentElement.style.setProperty('--bg-color', bgPicker.value);
+                    document.documentElement.style.setProperty('--text-color', textPicker.value);
+                });
+            });
+
+            // Load saved content if exists
+            const savedContent = localStorage.getItem('resumeContent');
+            if (savedContent) {
+                // Uncomment if you want to load saved content automatically
+                // document.querySelector('.container').innerHTML = savedContent;
+            }
+        });
+    </script>
+</body>
+</html>
