@@ -1,5 +1,6 @@
 /* Root Variables */
 :root {
+    
     --primary-color: #3B82F6;
     --secondary-color:#EF4444;
     --bg-color: black;
@@ -214,11 +215,6 @@ header {
     white-space: nowrap;
     font-size: 0.9rem; /* Adjust text size as needed */
 }
-
-
-
-
-
 
 
 /* For tablets or desktops */
@@ -1138,6 +1134,8 @@ textarea {
 }
 
 .demon-terminal {
+    max-width: 500px; /* Limit maximum width */
+    justify-self: center; /* Center the columns */
     background: rgba(0,0,0,0.9);
     border: 3px solid var(--primary-color);
     padding: 30px;
