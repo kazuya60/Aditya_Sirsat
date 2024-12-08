@@ -52,14 +52,14 @@ function initializeGameGrid() {
     const games = [
         {
             id: "game1",
-            name: "Cataclysm",
+            name: "CATACLYSM",
             thumbnail: "./img/file (1).mp4",
             tags: ["Unity", "C#", "Racing", "Arcade"],
             itchLink: "https://kazuya-minegishi.itch.io/cataclysm",
         },
         {
             id: "game2",
-            name: "Boom Crates",
+            name: "BOOM CRATES",
             thumbnail: "./img/file.mp4",
             tags: ["Unity", "C#", "HyperCasual"],
             itchLink: "https://kazuya-minegishi.itch.io/boom-crates",
@@ -70,6 +70,20 @@ function initializeGameGrid() {
             thumbnail: "./img/aot_video.mp4",
             tags: ["Unity", "C#", "Simulation", "Parkour", "Anime", "AOT"],
             itchLink: "https://kazuya-minegishi.itch.io/beyond-heights-attack-on-titan-like-game",
+        },
+        {
+            id: "game4",
+            name: "ROLL BALL",
+            thumbnail: "./img/Ball2.mp4",
+            tags: ["Unity", "C#", "Hyper-Casual"],
+            itchLink: "https://kazuya-minegishi.itch.io/roll-ball",
+        },
+        {
+            id: "game5",
+            name: "SCREW-UNSCREW",
+            thumbnail: "./img/Screw-Unscrew1.mp4",
+            tags: ["Unity", "C#", "Hyper-Casual","Prototype"],
+            itchLink: "https://kazuya-minegishi.itch.io/screwunscrew",
         },
 
         
@@ -273,6 +287,34 @@ description: "Beyond Heights is a thrilling first-person action game inspired by
         screenshots: ["./img/aot1.png", "./img/aot2.png","./img/aot3.png"],
     },
 
+    game4: {
+        title: "ROLL BALL",
+description: "Start rolling your way to victory in this fun mobile game! Control a ball, dodge challenging obstacles, and reach the Boat to win.",        
+        
+        platforms: "Android",
+        engine: "Unity",
+        role: "Game Developer,Game Programmer",
+        responsibilities: "Coding, Design",
+        youtube: "https://www.youtube.com/embed/lhYJgxsvj5E?si=Flc22YQhEZ_g3zuh",
+        itch: "https://kazuya-minegishi.itch.io/roll-ball",
+        gif: "./img/Ball1.mp4",
+        screenshots: ["./img/Ball1.jpg", "./img/Ball2.jpg","./img/Ball3.jpg", "./img/Ball4.jpg","./img/Ball5.jpg"],
+    },
+
+    game5: {
+        title: "Screw-Unscrew",
+description: "In this short prototype, your goal is simple: unscrew the screws, drop the wooden boards, and win! 🪛 Move screws strategically to bring everything crashing down. Inspired by the trending unscrewing games on Google Play, this version features 2 levels to showcase the core mechanic. A fun and satisfying experience.",        
+        
+        platforms: "Android",
+        engine: "Unity",
+        role: "Game Developer,Game Programmer",
+        responsibilities: "Coding, Design",
+        youtube: "https://www.youtube.com/embed/DEr4kuC34K4?si=200AAvTiS2ipVX0i",
+        itch: "https://kazuya-minegishi.itch.io/screwunscrew",
+        gif: "./img/Screw-Unscrew.mp4",
+        screenshots: ["./img/screw1.jpg", "./img/screw2.jpg","./img/screw3.jpg", "./img/screw4.jpg","./img/screw5.jpg"],
+    },
+
 };
     const game = games[gameId];
     if (!game) {
@@ -338,6 +380,8 @@ function setupNavigationButtons() {
         game1: { title: "Cataclysm" },
         game2: { title: "Boom Crates" },
         game3: { title: "Beyond Heights" },
+        game4: { title: "Roll Ball" },
+        game5: { title: "Screw Unscrew" },
     };
 
     const gamesOrder = Object.keys(games); // Get game IDs as an array

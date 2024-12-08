@@ -253,6 +253,12 @@ header {
         width: 100%; /* Full width of container */
         height: auto; /* Preserve aspect ratio */
     }
+    .game-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(3fr, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
 }
 
 /* For mobile dammit */
@@ -787,16 +793,6 @@ a {
     font-size: 3rem;
 }
 
-
-
-
-
-/* Responsive for Portrait GIFs */
-@media (max-aspect-ratio: 3/4) {
-    .game-thumbnail {
-        aspect-ratio: 3 / 4;
-    }
-}
 
 /* Contact Form Styles */
 .contact-form {
