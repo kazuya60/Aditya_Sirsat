@@ -255,7 +255,7 @@ header {
     }
     .game-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(3fr, 1fr));
+        grid-template-columns:repeat(3, 1fr);
         gap: 1.5rem;
         margin-top: 1rem;
     }
@@ -313,6 +313,57 @@ body.nav-open {
         
     }
 
+    
+    .logo{
+        padding-top: 0.2rem;
+    }
+
+    .grid{
+        padding: 2rem;
+    }
+
+    .right-column {
+        display: flex; /* Enable flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        padding: 0 2rem 2rem 0; /* Keep your original padding */
+        height: 100%; /* Ensure the column takes up the full height */
+    }
+
+    .video-container{
+        max-width: 1200px;
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+
+    .container
+    {
+        margin-left:2rem;
+        margin-right: 2rem;
+    }
+    .background-animation{
+        animation: scan 20s linear infinite;
+    }
+    .background-animation2{
+        animation: scan 20s linear infinite;
+    animation-delay: -10s;  /* Start 5 seconds behind the first layer */
+    }
+
+    .game-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width:930px)
+{
+    .main-nav{
+        display: none;
+    }
+
+    
     .hamburger {
         display: flex; /* Show hamburger icon only on small screens */
         position: fixed;
@@ -347,40 +398,6 @@ body.nav-open {
 
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
-    }
-    .logo{
-        padding-top: 0.2rem;
-    }
-
-    .grid{
-        padding: 2rem;
-    }
-
-    .right-column {
-        display: flex; /* Enable flexbox */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        padding: 0 2rem 2rem 0; /* Keep your original padding */
-        height: 100%; /* Ensure the column takes up the full height */
-    }
-
-    .video-container{
-        max-width: 1200px;
-        padding-left: 2rem;
-        padding-top: 2rem;
-    }
-
-    .container
-    {
-        margin-left:2rem;
-        margin-right: 2rem;
-    }
-    .background-animation{
-        animation: scan 20s linear infinite;
-    }
-    .background-animation2{
-        animation: scan 20s linear infinite;
-    animation-delay: -10s;  /* Start 5 seconds behind the first layer */
     }
 }
 
@@ -686,12 +703,12 @@ footer {
     border-radius: 10px;
 }
 
-.game-grid {
+/* .game-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
-}
+} */
 
 .game-card {
     background: #1e1e1e;
