@@ -359,8 +359,28 @@ body.nav-open {
 
 @media only screen and (max-width:930px)
 {
-    .main-nav{
-        display: none;
+    .main-nav {
+        display: none; /* Hide default nav */
+        flex-direction: column; /* Fullscreen menu layout */
+        justify-content: center;
+        align-items: center;
+        position: fixed; /* Cover entire screen */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        z-index: 1100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 10s ease-in-out;
+        
+    }
+
+    .main-nav.active {
+        display: flex;
+        opacity: 1;
+        pointer-events: all;
     }
 
     
