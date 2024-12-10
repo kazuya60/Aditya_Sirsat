@@ -13,6 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+function forceDownload(event, link) {
+    event.preventDefault(); // Prevent the default link behavior
+    window.open(link.href, '_blank'); // Open the PDF in a new tab
+    
+    // Create a hidden link to force the download
+    const anchor = document.createElement('a');
+    anchor.href = link.href;
+    anchor.download = 'Aditya_Sirsat_Resume.pdf'; // Custom file name for the download
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+}
 
 // ==========================
 // Utility: Parse URL Parameters
