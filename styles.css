@@ -357,6 +357,16 @@ body.nav-open {
     }
 }
 
+/* Tap animation for mobile */
+@media (hover: none) {
+    .download-button:active {
+        background-color: blue;
+        color: white;
+        transform: scale(0.95);
+        transition: background-color 0.3s, transform 0.2s;
+    }
+}
+
 @media only screen and (max-width:930px)
 {
     .main-nav {

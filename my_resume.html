@@ -107,6 +107,7 @@
 
         .skills-grid {
             display: flex;
+            flex-direction: column;
             flex-wrap: wrap;
             gap: 5px;
         }
@@ -117,6 +118,9 @@
             padding: 3px 6px;
             border-radius: 3px;
             font-size: 8pt;
+            white-space: nowrap; /* Prevent the text from wrapping */
+    width: fit-content; /* Ensure the tag only takes as much space as needed */
+    margin-bottom: 10px;
         }
 
         .links {
@@ -130,15 +134,20 @@
             color: var(--text-color);
             text-decoration: none;
             font-size: 9pt;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .contact-info {
             grid-column: 1 / -1;
-
+            flex-direction: column; /*remove to make it horizontal*/
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
             font-size: 9pt;
+        }
+
+        .contact-info p{
+            margin-top: 10px;
+            margin-bottom: 5px;
         }
 
         
@@ -172,14 +181,25 @@
             <p>Game Programmer & Level Designer</p>
         </div>
 
-        <div class="contact-info">
+        <!-- <div class="contact-info">
             <div><i class="fas fa-envelope"></i> eternalsirsat@gmail.com</div>
             <div><i class="fas fa-phone"></i> +91 9619468799</div>
             <div><i class="fas fa-map-marker-alt"></i> Kalyan, Maharashtra, India</div>
-        </div>
+        </div> -->
 
         <!-- Left Column -->
         <div class="left-column">
+
+            <section>
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> eternalsirsat@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9619468799</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kalyan, Maharashtra, India</p>
+                </div>
+
+            </section>
+            
             
             <div class="section">
                 <h2 class="section-title">About Me</h2>
@@ -235,6 +255,7 @@
                 <h2 class="section-title">Education</h2>
                 <p class="job-title">Amity University Mumbai</p>
                 <p>B.A (Multimedia & Gaming), 2021-2024 | CGPA: 9.20</p>
+                <p>Minor Track(Fine arts), 2021-2024</p>
                 <p class="job-title">South Eastern Finland School of Applied Science</p>
                 <p>Introduction to Video Games Creation, 2022-2023</p>
             </div>
