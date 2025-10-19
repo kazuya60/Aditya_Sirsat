@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Sirsat's Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3B82F6;
+            --secondary-color: #EF4444;
+            --tertiary-color: #962626;
+            --bg-color: black;
+            --text-color: #e0e0e0;
+            --font-size-base: 10pt;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: var(--font-size-base);
+            line-height: 1.4;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 1fr 2px 1fr;
+            max-width: 210mm;
+            margin: auto;
+            padding: 20px;
+            gap: 20px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                height: 100vh;
+                border: 3px solid var(--primary-color);
+                box-sizing: border-box;
+                page-break-inside: avoid;
+            }
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .header h1 {
+            color: var(--secondary-color);
+            font-size: 18pt;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 11pt;
+        }
+
+        .center-line {
+            background-color: var(--primary-color);
+            height: 100%;
+            width: 2px;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 11pt;
+            margin-bottom: 5px;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .job-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 0px;
+        }
+
+        .skill-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 8pt;
+            white-space: nowrap;
+            width: fit-content;
+            margin-bottom: 5px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 9pt;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            grid-column: 1 / -1;
+            flex-direction: column;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 9pt;
+        }
+
+        .contact-info p {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .project-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--tertiary-color);
+        }
+
+        .project ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        .project ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Aditya Vijay Sirsat</h1>
+            <p>Game Programmer & Level Designer</p>
+        </div>
+
+        <div class="left-column">
+            <section>
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> adityasirsat60@gmailcom</p>
+                    <p><i class="fas fa-phone"></i> +91 9619468799</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kalyan, Maharashtra, India</p>
+                </div>
+            </section>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <p class="job-title">Amity University Mumbai</p>
+                <p>B.A (Multimedia & Gaming), 2021-2024 | CGPA: 9.20</p>
+                <p>Minor Track (Fine arts), 2021-2024</p>
+                <p class="job-title">South Eastern Finland School of Applied Science</p>
+                <p>Introduction to Video Games Creation, 2022-2023</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">About Me</h2>
+                <p>Passionate about video games both as a player and a creator, I’ve honed my skills for 3 years as a Game Programmer and Level Designer. Well-versed in Unity C# and UE4 Blueprints.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">Unity Engine</div>
+                    <div class="skill-tag">Unreal Engine</div>
+                    <div class="skill-tag">C#</div>
+                    <div class="skill-tag">Blender</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">Visual Scripting</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">English (Proficient)</div>
+                    <div class="skill-tag">Marathi (Native)</div>
+                    <div class="skill-tag">Hindi (Proficient)</div>
+                    <div class="skill-tag">French (Conversational)</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Certificates</h2>
+                <p class="job-title">Ubisoft Game Development Workshop</p>
+                <p> IIT Bombay (Techfest), 2022</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">All my links</h2>
+                <div class="section links">
+                    <a href="https://github.com/kazuya60"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/aditya-sirsat-7b4653258"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://kazuya-minegishi.itch.io"><i class="fab fa-itch-io"></i> Itch.io</a>
+                    <a href="https://www.youtube.com/@kazuya_minegishi"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="https://kazuya60.github.io/Aditya_Sirsat/index.html"><i class="fas fa-code"></i> My Website</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-line"></div>
+
+        <div class="right-column">
+
+            <div class="section">
+                <h2 class="section-title">Work Experience</h2>
+
+                <!-- New Experience: IDC IIT Bombay -->
+                <div class="experience-item">
+                    <div class="job-title">Project Technical Assistant</div>
+                    <p>IDC School of Design, IIT Bombay | February 2025 – May 2025</p>
+                    <div class="project">
+                        <div class="project-title">VR Developer - MRI VRET Project</div>
+                        <ul>
+                          <li>Developed a modular VR VRET (Virtual Reality Exposure Therapy) experience with a dynamic dialogue system, gesture-based input, and event-driven triggers.</li>
+                          <li>Built a custom Sound Manager with ScriptableObjects to manage MRI machine sound sequences, synchronized door/bed animations, and gameplay-driven scene transitions.</li>
+                          <li>Optimized VR scenes with mixed and baked lighting, improved realism, implemented user recentering, and configured 3D assets for enhanced visual quality.</li>
+                          <li>Refactored and modularized core systems including audio handling, dialogue management, and event dispatching for scalability and maintainability.</li>
+                        </ul>
+                      </div>
+                      
+                    
+                    <div class="project">
+                        <div class="project-title">Teaching Assistance</div>
+                        <ul>
+                            <li>Supported Prof. Jayesh Pillai in the "Design for XR - Spring 2025" course by assisting design students with Unity AR/VR development, programming fundamentals, and troubleshooting technical issues.</li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+
+                <!-- Existing Experience -->
+                <div class="experience-item">
+                    <div class="job-title">Unity Developer Intern</div>
+                    <p>ThatsAwesome!Studio | March 2024 - May 2024</p>
+
+                    <div class="project">
+                        <div class="project-title">Rolling Ball Game</div>
+                        <ul>
+                          <li>Created a comprehensive GDD and designed game levels using Unity and Blender.</li>
+                          <li>Developed cohesive UI/UX, ball inventory management with ScriptableObjects, and a purchase system.</li>
+                          <li>Implemented core gameplay systems (respawn, win/lose, level progression) and integrated Google Mobile Ads.</li>
+                        </ul>
+                      </div>
+                      
+
+                    <div class="project">
+                        <div class="project-title">Screw Unscrewing Game - Prototype</div>
+                        <ul>
+                            <li>Developed C# scripts for screw and hole detection, replay mechanics, and player recovery systems.</li>
+                            <li>Designed balanced levels ranging from easy to hard, enhancing gameplay progression and user experience.</li>
+                            <li>Integrated rewarded and banner ads using Google Mobile Ads and documented technical development throughout the project.</li>
+                        </ul>
+                    </div>
+                    
+
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
