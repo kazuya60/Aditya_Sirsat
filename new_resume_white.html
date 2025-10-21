@@ -45,7 +45,7 @@
         }
 
         .center-line {
-            background-color: black;
+            background-color: rgb(0, 0, 0);
             height: 100%;
             width: 2px;
         }
@@ -82,7 +82,7 @@
         }
 
         .center-line {
-            background-color: black;
+            background-color: rgb(0, 0, 0);
             height: 100%;
             width: 2px;
         }
@@ -94,7 +94,7 @@
         .section-title {
             color: var(--primary-color);
             font-size: 11pt;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             border-bottom: 1px solid var(--primary-color);
         }
 
@@ -105,22 +105,17 @@
         }
 
         .skills-grid {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            gap: 0px;
-        }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
         .skill-tag {
-            background-color: var(--bg-color);
-            color: black;
-            padding: 3px 6px;
-            border-radius: 3px;
-            font-size: 8pt;
-            white-space: nowrap;
-            width: fit-content;
-            margin-bottom: 5px;
-        }
+      background-color: #f0f0f0;
+      padding: 3px 6px;
+      border-radius: 3px;
+      font-size: 8pt;
+    }
 
         .links {
             display: flex;
@@ -177,14 +172,14 @@
     <div class="container">
         <div class="header">
             <h1>Aditya Vijay Sirsat</h1>
-            <p>Game Programmer & Level Designer</p>
+            <p>VR Developer,Game Programmer & Level Designer</p>
         </div>
 
         <div class="left-column">
             <section>
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> adityasirsat60@gmailcom</p>
+                    <p><i class="fas fa-envelope"></i> adityasirsat60@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +91 9619468799</p>
                     <p><i class="fas fa-map-marker-alt"></i> Kalyan, Maharashtra, India</p>
                 </div>
@@ -195,26 +190,29 @@
                 <p class="job-title">Amity University Mumbai</p>
                 <p>B.A (Multimedia & Gaming), 2021-2024 | CGPA: 9.20</p>
                 <p>Minor Track (Fine arts), 2021-2024</p>
-                <p class="job-title">South Eastern Finland School of Applied Science</p>
-                <p>Introduction to Video Games Creation, 2022-2023</p>
+
             </div>
 
             <div class="section">
                 <h2 class="section-title">About Me</h2>
-                <p>Passionate about video games both as a player and a creator, I’ve honed my skills for 3 years as a
-                    Game Programmer and Level Designer. Well-versed in Unity C# and UE4 Blueprints.</p>
+                <p>VR developer with strong experience in Unity and Unreal Engine, specializing in 6DoF immersive and interactive experiences,Unity C# scripting,Unreal engine Blueprints, and cross-platform performance optimization. Passionate about video games both as a player and a creator. Currently working on the Maharashtra Drone Mission at IIT Bombay, focusing on realistic VR simulations and interactive environments.</p>
             </div>
 
+            
             <div class="section">
                 <h2 class="section-title">Skills</h2>
                 <div class="skills-grid">
-                    <div class="skill-tag">Unity Engine</div>
-                    <div class="skill-tag">Unreal Engine</div>
-                    <div class="skill-tag">C#</div>
-                    <div class="skill-tag">Blender</div>
-                    <div class="skill-tag">Git</div>
-                    <div class="skill-tag">Visual Scripting</div>
-                </div>
+          <div class="skill-tag">Unity Engine</div>
+          <div class="skill-tag">Unreal Engine</div>
+          <div class="skill-tag">C# Scripting</div>
+          <div class="skill-tag">Unreal Engine Blueprints</div>
+          <div class="skill-tag">Sequencer & Animation Integration</div>
+          <div class="skill-tag">VR Interaction (6DoF)</div>
+          <div class="skill-tag">XR Interaction Toolkit</div>
+          <div class="skill-tag">Optimization (APK/EXE)</div>
+          <div class="skill-tag">Blender</div>
+          <div class="skill-tag">Git</div>
+        </div>
             </div>
 
             <div class="section">
@@ -231,6 +229,8 @@
                 <h2 class="section-title">Certificates</h2>
                 <p class="job-title">Ubisoft Game Development Workshop</p>
                 <p> IIT Bombay (Techfest), 2022</p>
+                <p class="job-title">South Eastern Finland School of Applied Science</p>
+                <p>Introduction to Video Games Creation, 2022-2023</p>
             </div>
 
             <div class="section">
@@ -251,38 +251,54 @@
 
         <div class="right-column">
 
+
+
             <div class="section">
                 <h2 class="section-title">Work Experience</h2>
 
-                <!-- New Experience: IDC IIT Bombay -->
+                <!-- New Experience----2: IDC IIT Bombay -->
                 <div class="experience-item">
                     <div class="job-title">Project Technical Assistant</div>
-                    <p>IDC School of Design, IIT Bombay | February 2025 - Present</p>
+                    <p>Aerospace Engineering, IIT Bombay | May 2025 - Present</p>
                     <div class="project">
-                        <div class="project-title">VR Developer - MRI VRET Project</div>
+                        <div class="project-title">VR Developer - Maharashtra Drone Mission Project</div>
                         <ul>
-                            <li>Developed a modular VR VRET (Virtual Reality Exposure Therapy) experience with a dynamic
-                                dialogue system, gesture-based input, and event-driven triggers.</li>
-                            <li>Built a custom Sound Manager with ScriptableObjects to manage MRI machine sound
-                                sequences, synchronized door/bed animations, and gameplay-driven scene transitions.</li>
-                            <li>Optimized VR scenes with mixed and baked lighting, improved realism, implemented user
-                                recentering, and configured 3D assets for enhanced visual quality.</li>
-                            <li>Refactored and modularized core systems including audio handling, dialogue management,
-                                and event dispatching for scalability and maintainability.</li>
-                        </ul>
+                <li>Led VR simulation development for a mobile ground control vehicle in Unreal Engine.</li>
+                <li>Optimized performance, reviewed implementations, and ensured realistic interactions.</li>
+                <li>Compiled and guided selection of regional assets for authentic environments.</li>
+                <li>Co-ordinated with engineers/designers to align VR with real-world specs.</li>
+                <li>Streamlined 3D asset to Unreal Engine pipelines for efficient workflow.</li>
+                <li>Presented the project to government officials, showcasing VR design applications.</li>
+            </ul>
+
+
+
+                    </div>
+
+                    <!-- New Experience: IDC IIT Bombay -->
+                    <div class="experience-item">
+                        <div class="job-title">Project Technical Assistant</div>
+                        <p>IMXD Lab, IDC School of Design, IIT Bombay | February 2025 - May 2025</p>
+                        <div class="project">
+                            <div class="project-title">VR Developer - MRI VRET Project</div>
+                            <ul>
+                <li>Built interactive and immersive 6DoF VR exposure therapy simulation in Unity with C# scripting.</li>
+                <li>Created modular,scalable and efficient systems for animation,dialogues,gestures,interactions etc.</li>
+                <li>Developed custom Sound Manager to sync MRI sounds with animations.</li>
+                <li>Optimized environments for smooth cross-platform builds (APK, EXE).</li>
+                <li>Implemented recentering, comfort features, and realistic 3D configurations.</li>
+                <li>Integrated hand-tracking for intuitive VR interactions and improved user testing.</li>
+            </ul>
+                        </div>
                     </div>
 
 
                     <div class="project">
-                        <div class="project-title">Teaching Assistance</div>
+                        <div class="project-title">Teaching Assistance - Design for XR (Spring & Autumn 2025)</div>
                         <ul>
-                            <li>Supported Prof. Jayesh Pillai in the "Design for XR - Spring 2025" course by assisting
-                                design students with Unity AR/VR development, programming fundamentals, and
-                                troubleshooting technical issues.</li>
+                            <li>Mentored students in Unity AR/VR development, C# fundamentals, and technical troubleshooting for ‘Design for XR’ courses by Prof. Jayesh Pillai.</li>
                         </ul>
                     </div>
-
-
 
 
                     <!-- Existing Experience -->
@@ -293,30 +309,12 @@
                         <div class="project">
                             <div class="project-title">Rolling Ball Game</div>
                             <ul>
-                                <li>Created a comprehensive GDD and designed game levels using Unity and Blender.</li>
-                                <li>Developed cohesive UI/UX, ball inventory management with ScriptableObjects, and a
-                                    purchase system.</li>
-                                <li>Implemented core gameplay systems (respawn, win/lose, level progression) and
-                                    integrated Google Mobile Ads.</li>
+                                <li>Developed gameplay systems, UI/UX, monetization features, and optimized mechanics with ScriptableObjects for mobile Unity games.</li>
                             </ul>
                         </div>
-
-
-                        <div class="project">
-                            <div class="project-title">Screw Unscrewing Game - Prototype</div>
-                            <ul>
-                                <li>Developed C# scripts for screw and hole detection, replay mechanics, and player
-                                    recovery systems.</li>
-                                <li>Designed balanced levels ranging from easy to hard, enhancing gameplay progression
-                                    and user experience.</li>
-                                <li>Integrated rewarded and banner ads using Google Mobile Ads and documented technical
-                                    development throughout the project.</li>
-                            </ul>
-                        </div>
-
-
-
                     </div>
+
+
 
                 </div>
             </div>
